@@ -21,18 +21,18 @@ const colorClassMap: Record<ListItem["color"], string> = {
 function RollingTextItem({ item }: RollingTextItemProps) {
   return (
     <div className="group relative w-full cursor-pointer border-b border-neutral-200/20 py-6">
-      <div className="relative h-[60px] overflow-hidden md:h-20">
+      <div className="relative h-[48px] overflow-hidden sm:h-[56px] md:h-20">
         <div className="transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-1/2">
-          <div className="flex h-[60px] items-center md:h-20">
-            <h2 className="font-sans text-5xl font-black uppercase tracking-tighter text-white md:text-7xl">
+          <div className="flex h-[48px] items-center sm:h-[56px] md:h-20">
+            <h2 className="font-sans text-3xl font-black uppercase tracking-tighter text-white sm:text-4xl md:text-7xl">
               {item.title}
             </h2>
           </div>
 
-          <div className="flex h-[60px] items-center md:h-20">
+          <div className="flex h-[48px] items-center sm:h-[56px] md:h-20">
             <h2
               className={cn(
-                "font-sans text-5xl font-black uppercase tracking-tighter italic md:text-7xl",
+                "font-sans text-3xl font-black uppercase tracking-tighter italic sm:text-4xl md:text-7xl",
                 colorClassMap[item.color],
               )}
             >
@@ -48,7 +48,7 @@ function RollingTextItem({ item }: RollingTextItemProps) {
 
       <div
         className={cn(
-          "pointer-events-none absolute right-0 top-1/2 z-20 h-32 w-48 -translate-y-1/2 overflow-hidden rounded-lg shadow-2xl",
+          "pointer-events-none absolute right-0 top-1/2 z-20 hidden h-32 w-48 -translate-y-1/2 overflow-hidden rounded-lg shadow-2xl lg:block",
           "opacity-0 scale-95 rotate-3 translate-x-4 transition-all duration-500 ease-out",
           "group-hover:translate-x-0 group-hover:scale-100 group-hover:rotate-0 group-hover:opacity-100",
         )}
@@ -58,6 +58,7 @@ function RollingTextItem({ item }: RollingTextItemProps) {
             src={item.src}
             alt={item.alt}
             fill
+            sizes="(min-width: 1024px) 192px, 0px"
             className="object-cover grayscale transition-all duration-500 ease-out group-hover:grayscale-0"
           />
           <div className="absolute inset-0 bg-[#3E505B]/15 mix-blend-overlay" />
@@ -104,7 +105,7 @@ function RollingTextList() {
   ];
 
   return (
-    <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center px-4 py-12">
+    <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center px-4 py-10 sm:py-12">
       <h3 className="mb-8 text-sm font-bold uppercase tracking-widest text-neutral-400">
         Selected Work
       </h3>

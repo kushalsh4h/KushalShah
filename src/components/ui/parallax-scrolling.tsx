@@ -59,12 +59,12 @@ export function ParallaxComponent() {
 
   return (
     <div className="relative w-full bg-[#3E505B] text-white" ref={parallaxRef}>
-      <section className="relative w-full h-[100vh] overflow-hidden">
+      <section className="relative h-[100svh] min-h-[560px] w-full overflow-hidden md:min-h-[680px]">
         <div className="relative w-full h-full">
           <div className="absolute top-0 left-0 w-full h-px bg-white/10 z-50"></div>
           <div data-parallax-layers className="absolute top-0 left-0 w-full h-full">
-            <div data-parallax-layer="3" className="absolute top-0 left-0 w-full h-[100vh] flex flex-col items-center justify-center z-20 -translate-y-[15vh]">
-              <h2 className="text-[12vw] font-[900] text-white tracking-[0.035em] leading-[0.95] m-0 text-center font-sans whitespace-nowrap">Kushal Shah</h2>
+            <div data-parallax-layer="3" className="absolute top-0 left-0 z-20 flex h-[100svh] min-h-[560px] w-full -translate-y-[10vh] flex-col items-center justify-center md:min-h-[680px] md:-translate-y-[15vh]">
+              <h2 className="m-0 whitespace-nowrap text-center font-sans text-[clamp(2.75rem,11vw,12rem)] font-[900] leading-[0.95] tracking-[0.035em] text-white">Kushal Shah</h2>
             </div>
             <img 
               src="https://cdn.prod.website-files.com/671752cd4027f01b1b8f1c7f/6717795bb5aceca85011ad83_osmo-parallax-layer-1.webp" 
@@ -72,7 +72,7 @@ export function ParallaxComponent() {
               width="800" 
               data-parallax-layer="4" 
               alt="" 
-              className="absolute top-0 left-0 w-full h-[120vh] object-cover object-bottom z-30 pointer-events-none" 
+              className="pointer-events-none absolute top-0 left-0 z-30 h-[120svh] w-full object-cover object-bottom" 
             />
           </div>
           <div className="absolute bottom-0 left-0 w-full h-[20vh] bg-gradient-to-t from-[#131313] to-transparent z-40 pointer-events-none"></div>

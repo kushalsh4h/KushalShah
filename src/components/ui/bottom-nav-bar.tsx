@@ -21,7 +21,7 @@ const navItems = [
   { label: "Contact", icon: Mail },
 ];
 
-const MOBILE_LABEL_WIDTH = 72;
+const MOBILE_LABEL_WIDTH = 56;
 
 type BottomNavBarProps = {
   className?: string;
@@ -88,7 +88,7 @@ export function BottomNavBar({
       role="navigation"
       aria-label="Bottom Navigation"
       className={cn(
-        "bg-card/50 dark:bg-card/50 backdrop-blur-md border border-white/10 rounded-full flex items-center p-2 shadow-xl space-x-1 min-w-[320px] max-w-[95vw] h-[52px]",
+        "bg-card/50 dark:bg-card/50 backdrop-blur-md border border-white/10 rounded-full flex items-center p-1.5 shadow-xl space-x-1 w-[min(95vw,760px)] h-[52px] overflow-hidden",
         stickyBottom && "fixed inset-x-0 top-6 mx-auto z-[100] w-fit",
         className,
       )}
@@ -102,7 +102,7 @@ export function BottomNavBar({
             key={item.label}
             whileTap={{ scale: 0.97 }}
             className={cn(
-              "flex items-center gap-0 px-3 py-2 rounded-full transition-colors duration-200 relative h-10 min-w-[44px] min-h-[40px] max-h-[44px]",
+              "flex flex-1 items-center justify-center gap-0 px-2 py-2 rounded-full transition-colors duration-200 relative h-10 min-w-[44px] min-h-[40px] max-h-[44px] sm:flex-none sm:justify-start sm:px-3",
               isActive
                 ? "bg-primary/10 dark:bg-primary/15 text-primary dark:text-primary gap-2"
                 : "bg-transparent text-muted-foreground dark:text-muted-foreground hover:bg-white/10 hover:text-white hover:shadow-sm",

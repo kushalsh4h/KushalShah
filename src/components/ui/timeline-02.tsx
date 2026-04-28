@@ -27,9 +27,9 @@ const timelineData: Timeline_02[] = [
 
 export default function Timeline_02() {
   return (
-    <section id="timeline-section" className="bg-[#131313] py-24">
-      <div className="container">
-        <h1 className="text-white mb-16 text-center text-4xl font-bold tracking-tight sm:text-5xl">
+    <section id="timeline-section" className="bg-[#131313] py-16 sm:py-20 lg:py-24">
+      <div className="container px-4 sm:px-6">
+        <h1 className="mb-12 text-center text-3xl font-bold tracking-tight text-white sm:mb-14 sm:text-4xl lg:mb-16 lg:text-5xl">
           Education Timeline
         </h1>
 
@@ -44,7 +44,7 @@ export default function Timeline_02() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{}}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="relative mb-12 pl-12"
+              className="relative mb-10 pl-10 sm:mb-12 sm:pl-12"
             >
               {/* Timeline dot */}
               <div className="absolute left-0 top-5 -translate-x-1/2 h-3 w-3 rounded-full bg-white/50 ring-2 ring-white/20" />

@@ -37,15 +37,15 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact-section" className="bg-[#131313] py-24">
+    <section id="contact-section" className="bg-[#131313] py-16 sm:py-20 lg:py-24">
       <div className="container mx-auto max-w-3xl px-4 text-center">
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-white/55">
           Contact
         </p>
-        <h2 className="mb-6 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+        <h2 className="mb-6 text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
           Let&apos;s build something together.
         </h2>
-        <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-white/75 sm:text-xl">
+        <p className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg lg:text-xl">
           Drop your email and I&apos;ll receive a message that you&apos;re interested to hire.
         </p>
 
