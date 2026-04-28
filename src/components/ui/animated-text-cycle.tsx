@@ -15,7 +15,7 @@ export default function AnimatedTextCycle({
 }: AnimatedTextCycleProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [width, setWidth] = useState("auto");
-  const measureRef = useRef<HTMLDivElement>(null);
+  const measureRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     if (measureRef.current) {
@@ -34,32 +34,6 @@ export default function AnimatedTextCycle({
 
     return () => clearInterval(timer);
   }, [interval, words.length]);
-
-  const containerVariants = {
-    hidden: {
-      y: -20,
-      opacity: 0,
-      filter: "blur(8px)",
-    },
-    visible: {
-      y: 0,
-      opacity: 1,
-      filter: "blur(0px)",
-      transition: {
-        duration: 0.4,
-        ease: "easeOut",
-      },
-    },
-    exit: {
-      y: 20,
-      opacity: 0,
-      filter: "blur(8px)",
-      transition: {
-        duration: 0.3,
-        ease: "easeIn",
-      },
-    },
-  };
 
   return (
     <>
@@ -92,10 +66,19 @@ export default function AnimatedTextCycle({
           <motion.span
             key={currentIndex}
             className={`inline-block font-bold ${className}`}
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
+            initial={{ y: -20, opacity: 0, filter: "blur(8px)" }}
+            animate={{
+              y: 0,
+              opacity: 1,
+              filter: "blur(0px)",
+              transition: { duration: 0.4 },
+            }}
+            exit={{
+              y: 20,
+              opacity: 0,
+              filter: "blur(8px)",
+              transition: { duration: 0.3 },
+            }}
             style={{ whiteSpace: "nowrap" }}
           >
             {words[currentIndex]}
