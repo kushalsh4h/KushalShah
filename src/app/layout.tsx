@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Preloader } from "@/components/ui/preloader";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <Preloader />
         {children}
+        <Analytics />
       </body>
     </html>
   );
